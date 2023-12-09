@@ -17,7 +17,7 @@ export class TachesService {
     return this.toDoList;
   }
 
-  addTask(newTask: any) {
+  addTask(newTask: ITask) {
 
     // Push la nouvelle task dans le tableau toDoList
     this.toDoList.push(newTask);

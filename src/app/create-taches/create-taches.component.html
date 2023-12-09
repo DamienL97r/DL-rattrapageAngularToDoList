@@ -1,4 +1,12 @@
 <div class="body-container">
-    <p>create-taches works!</p>
+    <h3>Rajouter une tâche ici</h3>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <label for="titre">Titre</label>
+        <input id="titre" type="titre" formControlName="titre">
+      
+        <button>Ajouter</button>
+      </form>
 </div>
 

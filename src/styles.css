@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: 5px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body-container {
+    margin-top: 80px;
+    border: 3px solid #41403E;
+
+    padding: 10px 30px;
+    margin: 100px;
+    width: 30%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+}
+
+.body-container > h3 {
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #41403E;
+
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+}
+
+
+.surligned {
+    width: fit-content;
+    background-color: rgba(255, 255, 0, 0);
+    border: 2px solid rgba(255, 255, 0, 0);
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.surligned:hover {
+    width: fit-content;
+    background-color: yellow;
+    border: 2px solid yellow;
+    color: rgba(128, 128, 128, 0.719);
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+}

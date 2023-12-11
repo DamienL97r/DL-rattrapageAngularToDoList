@@ -3,10 +3,14 @@
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-        <label for="titre">Titre</label>
-        <input id="titre" type="titre" formControlName="titre">
-      
-        <input type="button" class="btn-secondary-outline" value="Ajouter"/>
-      </form>
+        <div class="form-group">
+            <label for="paperInputs1">Titre</label>
+            <input type="text" placeholder="Titre" id="paperInputs1" formControlName="titre">
+            <div *ngIf="form.get('titre')?.hasError('required')">
+                Le titre est requis.
+            </div>
+        </div>
+        <button class="btn-secondary">Ajouter</button>
+    </form>
 </div>
 

@@ -6,8 +6,20 @@
       
       <div *ngFor="let task of tasks">
             <div class="task-item">
-                <p [class.checked]="task.isChecked">{{ task.id }} : {{ task.titre }}</p>
-                <input (click)="onClick(task)" type="checkbox" name="paperChecks" id="paperChecks1">
+                <p [class.checked]="task.completed">{{ task.id }} : {{ task.titre }}</p>
+                <fieldset class="form-group">
+                    <label for="paperChecks{{ task.id }}" class="paper-check">
+                      <input (click)="onClick(task)" type="checkbox" name="paperChecks" id="paperChecks{{ task.id }}" value="option {{ task.id }}"> <span></span>
+                    </label>
+                </fieldset>
             </div>
       </div>
 </div>
+
+<div (click)="reload()" class="reload-container">
+    <img src="../../assets/img/repetez-le-symbole-de-fleche-circulaire-dessine-a-la-main.png" alt="icone-flèche">
+    <p>Réinitialiser la todo list !</p>
+</div>
+
+
+

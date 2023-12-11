@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TachesService } from '../taches.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ITask } from '../itask';
 import { Router } from '@angular/router';
 
@@ -17,31 +17,29 @@ export class CreateTachesComponent {
 
 
   public form:FormGroup = new FormGroup({
-    titre: new FormControl(''),
+    titre: new FormControl('', [Validators.required]),
   })
 
   mockTaches: ITask[] = this.taskService.fetchAll();
 
   onSubmit() {
-    
+    if (this.form.valid) {
+      const task = this.form.value.titre;
 
-    const task = this.form.value.titre;
-    
+      // Créez une nouvelle tache
+      const newTask = {
+        id: this.mockTaches.length + 1,
+        titre: task
+      };
 
-    // Créez une nouvelle tache
-    const newTask = {
-      id: this.mockTaches.length + 1,
-      titre: task,
-      isChecked: false
-    };
+      // l'ajouter dans le mock
+      this.taskService.addTask(newTask);
 
-    // l'ajouter dans le mock
-    this.taskService.addTask(newTask);
+      // Réinitialiser le formulaire
+      this.form.reset();
 
-    // Réinitialiser le formulaire
-    this.form.reset();
-
-    // Redirection vers l'accueil
-    this.router.navigate(['/']);
+      // Redirection vers l'accueil
+      this.router.navigate(['/']);
+    }
   }
 }

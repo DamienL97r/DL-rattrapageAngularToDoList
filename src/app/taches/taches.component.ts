@@ -21,7 +21,13 @@ export class TachesComponent implements OnInit {
   }
 
   onClick(task: any) {
-    task.isChecked = !task.isChecked;
+    
+    task.completed = !task.completed;
+    console.log(task.completed);
   }
 
+  reload() {
+    console.log('hello');
+    window.location.reload();
+  }
 }

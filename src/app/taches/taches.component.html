@@ -6,10 +6,8 @@
       
       <div *ngFor="let task of tasks">
             <div class="task-item">
-                <p>{{ task.id }} : {{ task.titre }}</p>
-                <input (click)="onClick()" type="checkbox" name="{{ task.titre }}" id="{{ task.id }}">
+                <p [class.checked]="task.isChecked">{{ task.id }} : {{ task.titre }}</p>
+                <input (click)="onClick(task)" type="checkbox" name="paperChecks" id="paperChecks1">
             </div>
       </div>
 </div>
-
-

@@ -32,6 +32,7 @@ export class CreateTachesComponent {
     const newTask = {
       id: this.mockTaches.length + 1,
       titre: task,
+      isChecked: false
     };
 
     // l'ajouter dans le mock

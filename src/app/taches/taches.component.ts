@@ -11,6 +11,8 @@ export class TachesComponent implements OnInit {
 
   constructor(private taskService: TachesService) {}
 
+  isChecked: boolean = false;
+
   tasks: ITask[] = this.taskService.fetchAll();
 
   ngOnInit(): void {
@@ -18,9 +20,8 @@ export class TachesComponent implements OnInit {
     
   }
 
-  onClick() {
-    console.log('clicked');
-    
+  onClick(task: any) {
+    task.isChecked = !task.isChecked;
   }
 
 }

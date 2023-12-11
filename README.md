@@ -56,3 +56,4 @@ https://www.getpapercss.com/
 6. Déploiement du projet sur Netlify:
     - Utilisation de la commande `ng build` pour générer un ensemble de fichiers statiques qui pourront être servis à partir d'un server standard, comme Apache ou Nginx. Et c'est l'ensemble de ces fichiers qui devront être déployés sur Netlify.
 ![Alt text](image-5.png)![Alt text](image-6.png)
+    - Voici le lien vers la toDoList déployée sur Netlify : https://beautiful-starlight-51aab9.netlify.app/

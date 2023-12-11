@@ -4,9 +4,12 @@
     <h3>NE PAS OUBLIER</h3>
     
       
-      <ul *ngFor="let task of tasks">
-            <li>{{ task.titre }}</li>
-      </ul>
+      <div *ngFor="let task of tasks">
+            <div class="task-item">
+                <p>{{ task.id }} : {{ task.titre }}</p>
+                <input (click)="onClick()" type="checkbox" name="{{ task.titre }}" id="{{ task.id }}">
+            </div>
+      </div>
 </div>
 
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TachesService } from '../taches.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ITask } from '../itask';
@@ -14,36 +14,28 @@ export class CreateTachesComponent {
 
   constructor(private taskService: TachesService, private router: Router) {}
 
+
+
   public form:FormGroup = new FormGroup({
     titre: new FormControl(''),
   })
 
-  mockTaches: ITask[] = [];
+  mockTaches: ITask[] = this.taskService.fetchAll();
 
   onSubmit() {
     
 
     const task = this.form.value.titre;
-    console.log(task);
     
 
     // Créez une nouvelle tache
     const newTask = {
-      id: this.mockTaches.length + 1, // Génére un nouvel ID
+      id: this.mockTaches.length + 1,
       titre: task,
     };
 
-    this.mockTaches.push(newTask);
-
+    // l'ajouter dans le mock
     this.taskService.addTask(newTask);
-
-    this.mockTaches = this.taskService.fetchAll();
-
-
-    console.log(newTask);
-    console.log(this.mockTaches);
-    
-
 
     // Réinitialiser le formulaire
     this.form.reset();

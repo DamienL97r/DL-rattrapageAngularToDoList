@@ -1,5 +1,5 @@
 # Rattrapage Angular projet ToDoList
-
+![Alt text](image-8.png)
 ## Objectifs et fonctionnalités
 
 - Développer une application "TodoList" avec Angular qui permet à l'utilisateur de visualiser une liste de tâches et de les ajouter.
@@ -51,7 +51,7 @@ https://www.getpapercss.com/
     - Utilisation de ReactiveFormModule pour le formulaire d'ajout de tâches dans le composant CreateTacheComponent.
 ![Alt text](image-4.png)
     - Utilisation de Validators pour effectuer le contrôle du contenu de l'input lors de la soumission du formulaire.
-![Alt text](image-3.png)
+![Alt text](image-3.png)![Alt text](image-9.png)
 
 6. Déploiement du projet sur Netlify:
     - Utilisation de la commande `ng build` pour générer un ensemble de fichiers statiques qui pourront être servis à partir d'un server standard, comme Apache ou Nginx. Et c'est l'ensemble de ces fichiers qui devront être déployés sur Netlify.
